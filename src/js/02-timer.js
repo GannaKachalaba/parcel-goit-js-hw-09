@@ -27,13 +27,17 @@ const options = {
       window.alert('Please choose a date in the future! Do not look back..');
       return;
     }
-    if (selectedDates[0] > new Date()) {
+    else {
+      (selectedDates[0] > new Date()) 
       refs.start.disabled = false;
-    }
-
+      };
+  
     refs.start.addEventListener('click', () => {
+      refs.start.toggleAttribute('disabled');
+      console.log(refs.start);
       intervalId = setInterval(() => {
         const differenceInTime = selectedDates[0] - new Date();
+        
 
         if (differenceInTime < 1000) {
           clearInterval(intervalId);

@@ -15,14 +15,18 @@ function onStart() {
   timerId = setInterval(bgColor, 1000);
 
   dataStartBtn.toggleAttribute('disabled');
+  dataStopBtn.removeAttribute('disabled');
 }
+
 
 
 function onStop() {
   clearInterval(timerId);
 
   dataStartBtn.removeAttribute('disabled');
+  dataStopBtn.toggleAttribute('disabled');
 }
+
 
 function bgColor() {
   body.style.backgroundColor = getRandomHexColor();
